@@ -1,16 +1,45 @@
 @import "tailwindcss";
 
+/* Kerala Color Palette for Tailwind v4 */
+@theme {
+  --color-brand: #d4af37;
+  --color-brand-50: #fcf9eb;
+  --color-brand-100: #f6edc7;
+  --color-brand-200: #edda92;
+  --color-brand-300: #e3c254;
+  --color-brand-400: #d4af37;
+  --color-brand-500: #c2941b;
+  --color-brand-600: #a67815;
+  --color-brand-700: #855d16;
+  --color-brand-800: #6f4e18;
+  --color-brand-900: #5f4119;
+  
+  --color-palm: #1e7f4f;
+  --color-palm-light: #eaf5ed;
+  --color-palm-50: #eaf5ed;
+  --color-palm-100: #c9e6d3;
+  --color-palm-200: #94cfaa;
+  --color-palm-300: #5cb37e;
+  --color-palm-400: #1e7f4f;
+  --color-palm-500: #186b42;
+  --color-palm-600: #145735;
+  --color-palm-700: #104328;
+  --color-palm-800: #0c2f1b;
+  --color-palm-900: #081b0e;
+  
+  --color-kathakali: #b3262e;
+  --color-lamp: #ffb300;
+  --color-backwater: #1565c0;
+  --color-husk: #6d4c41;
+  --color-paper: #faf7f0;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Removed invalid @theme block */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -20,7 +49,26 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #1f2937; /* Tailwind gray-800 */
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* Utility class for section vertical spacing */
+.section-y {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-y {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Focus-visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.5);
+  outline-offset: 2px;
 }

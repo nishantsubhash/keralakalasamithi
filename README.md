@@ -20,6 +20,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Tailwind CSS & Custom Color
+
+Tailwind CSS is installed and configured. A custom color `brand` (kasavu gold: #d4af37) is available:
+
+```
+text-brand
+bg-brand
+border-brand
+```
+
+## Project Structure
+- `/app` - App Router pages/components
+- `/components` - Shared React components
+- `/public` - Static assets
+- `/styles` - Global styles
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
