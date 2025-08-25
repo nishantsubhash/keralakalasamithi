@@ -1,4 +1,7 @@
-import SectionTitle from "../../components/SectionTitle";
+import PageContainer from "../../components/PageContainer";
+import PageBanner from "../../components/PageBanner";
+import ContentSection from "../../components/ContentSection";
+import SectionBanner from "../../components/SectionBanner";
 import KksCard from "../../components/KksCard";
 import KksButton from "../../components/KksButton";
 import Image from "next/image";
@@ -27,32 +30,45 @@ const issues = [
   },
 ];
 
+
 export default function Magazine() {
   return (
-    <div className="bg-gray-50 py-12">
-      <SectionTitle>Kerala Vibes – Digital Magazine</SectionTitle>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-        {issues.map((issue) => (
-          <KksCard
-            key={issue.id}
-            imageSlot={
-              <Image
-                src={issue.cover}
-                alt={issue.title}
-                width={400}
-                height={550}
-                className="h-56 md:h-64 bg-gray-200 rounded-xl object-cover w-full"
-                unoptimized
+    <>
+      <PageBanner
+        title="Kerala Vibes – Digital Magazine"
+        subtitle="Read our quarterly magazine celebrating Kerala’s culture, events, and stories."
+        imageSrc="/kks/magazine-hero.jpg"
+        tint="dark"
+        height="md"
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Magazine" }]}
+      />
+      <PageContainer>
+        <SectionBanner variant="vilakku" className="mb-8" />
+        <ContentSection background="gray">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {issues.map((issue) => (
+              <KksCard
+                key={issue.id}
+                imageSlot={
+                  <Image
+                    src={issue.cover}
+                    alt={issue.title}
+                    width={400}
+                    height={550}
+                    className="h-56 md:h-64 bg-gray-200 rounded-xl object-cover w-full"
+                    unoptimized
+                  />
+                }
+                title={issue.title}
+                summary={issue.period}
+                actionSlot={
+                  <KksButton href={`/magazine/${issue.id}`} variant="primary">Read Now</KksButton>
+                }
               />
-            }
-            title={issue.title}
-            summary={issue.period}
-            actionSlot={
-              <KksButton href={`/magazine/${issue.id}`} variant="primary">Read Now</KksButton>
-            }
-          />
-        ))}
-      </div>
-    </div>
+            ))}
+          </div>
+        </ContentSection>
+      </PageContainer>
+    </>
   );
 }

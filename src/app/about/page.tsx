@@ -1,45 +1,28 @@
-import Section from "../../components/Section";
-import SectionTitle from "../../components/SectionTitle";
+import React from "react";
+import PageBanner from "../../components/PageBanner";
 
-export default function About() {
-  const committee = [
-    { name: "A. Kumar", role: "President" },
-    { name: "B. Nair", role: "Secretary" },
-    { name: "C. Menon", role: "Treasurer" },
-    { name: "D. Pillai", role: "Cultural Head" },
-    { name: "E. Varma", role: "Social Head" },
-    { name: "F. George", role: "Charity Head" },
-  ];
-
+export default function AboutPage() {
   return (
-    <Section>
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 text-center">About Kerala Kala Samithi</h1>
-      <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto mt-4 text-center">
-        Kerala Kala Samithi is dedicated to preserving Kerala’s vibrant culture, celebrating its traditions, and supporting social causes that uplift our community.
-      </p>
-
-      {/* Mission Block */}
-      <div className="mt-10 bg-white rounded-2xl shadow-md p-8 max-w-4xl mx-auto text-center">
-        <div className="text-2xl font-semibold text-brand">Our Mission</div>
-        <div className="text-gray-600 mt-3 leading-relaxed">
-          To foster a vibrant community that celebrates Kerala’s heritage, promotes cultural exchange, and supports charitable initiatives for the betterment of all.
-        </div>
-      </div>
-
-      {/* Committee Grid */}
-      <SectionTitle className="mt-16">Our Committee</SectionTitle>
-      <div className="mt-8 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-        {committee.map((member, idx) => (
-          <div key={member.name} className="bg-white rounded-2xl shadow p-6 text-center">
-            <div className="mx-auto h-24 w-24 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-2xl">
-              {/* Avatar Placeholder */}
-              <span>{String.fromCharCode(65 + idx)}</span>
-            </div>
-            <div className="mt-4 text-lg font-semibold text-gray-900">{member.name}</div>
-            <div className="text-sm text-gray-600">{member.role}</div>
-          </div>
-        ))}
-      </div>
-    </Section>
+    <>
+      <PageBanner
+        title="About Kerala Kala Samithi"
+        subtitle="Learn more about our mission, values, and community."
+        imageSrc="/kks/about-bg.jpg"
+        tint="dark"
+        height="md"
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "About" }]}
+      />
+      <main className="max-w-4xl mx-auto py-16 px-4">
+        <p className="text-lg text-gray-700 mb-4">
+          Kerala Kala Samithi (KKS) is dedicated to promoting Kerala&#39;s rich
+          culture, arts, and community spirit. We organize events, workshops,
+          and charitable activities to connect people and celebrate traditions.
+        </p>
+        <p className="text-md text-gray-600">
+          Join us to experience the vibrant heritage of Kerala and be part of a
+          welcoming community.
+        </p>
+      </main>
+    </>
   );
 }
