@@ -15,11 +15,11 @@ type PageBannerProps = {
 function getHeights(height: "sm" | "md" | "lg" = "md") {
   switch (height) {
     case "sm":
-      return "min-h-[140px] md:min-h-[160px]";
+      return "min-h-[240px] md:min-h-[320px]";
     case "lg":
-      return "min-h-[220px] md:min-h-[260px]";
+      return "min-h-[400px] md:min-h-[500px]";
     default:
-      return "min-h-[180px] md:min-h-[200px]";
+      return "min-h-[240px] md:min-h-[320px]";
   }
 }
 
@@ -33,22 +33,16 @@ export default function PageBanner({
 }: PageBannerProps) {
   const heights = getHeights(height);
   const hasImage = !!imageSrc;
-  const overlayClass =
-    tint === "dark"
-      ? "bg-black/35"
-      : "bg-white/20 backdrop-blur";
-  const titleClass = hasImage && tint === "dark"
-    ? "text-white"
-    : "text-[#185b34]";
-  const subtitleClass = hasImage && tint === "dark"
-    ? "text-white/90"
-    : "text-gray-600";
+  const overlayClass = "bg-gradient-to-b from-[#185b34]/60 to-transparent";
+  const titleClass = "text-white text-center font-bold text-3xl md:text-4xl";
+  const subtitleClass = "text-[#d4af37] text-center text-lg md:text-xl font-medium mt-2";
 
   return (
     <section
-      className={`relative isolate w-full ${heights} bg-gradient-to-b from-white to-[#fffaf0]`}
+      className={`relative isolate w-full ${heights} bg-gradient-to-b from-white to-[#fffaf0] shadow-lg flex justify-center`}
       role="region"
       aria-label={`Page banner: ${title}`}
+      style={{ borderRadius: "0 0 24px 24px" }}
     >
       {hasImage && (
         <>
@@ -56,16 +50,17 @@ export default function PageBanner({
             src={imageSrc!}
             alt={title}
             fill
-            className="object-cover object-center"
+            className="object-cover bg-white"
+            style={{ objectPosition: "center 60%" }}
             priority
           />
           <div className={`absolute inset-0 ${overlayClass}`} />
         </>
       )}
-      <div className="absolute inset-x-0 bottom-0 border-b-2 border-[#d4af37]" />
-      <div className="container mx-auto px-4 flex flex-col justify-center min-h-inherit text-center md:text-left relative z-10">
+  <div className="absolute inset-x-0 bottom-0 border-b border-[#d4af37] rounded-b-2xl shadow-lg" />
+  <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-[1200px] px-4 flex flex-col justify-center items-center min-h-inherit text-center relative z-10">
         {breadcrumb && breadcrumb.length > 0 && (
-          <nav className="mb-2 flex items-center justify-center md:justify-start text-xs text-[#185b34]/80 gap-1" aria-label="Breadcrumb">
+          <nav className="mb-4 flex items-center justify-center md:justify-start text-sm text-[#185b34]/80 gap-2 font-medium" aria-label="Breadcrumb">
             {breadcrumb.map((item, idx) => (
               <React.Fragment key={item.label + idx}>
                 {item.href ? (
@@ -83,10 +78,8 @@ export default function PageBanner({
             ))}
           </nav>
         )}
-        <h1 className={`text-3xl md:text-4xl font-bold ${titleClass}`}>{title}</h1>
-        {subtitle && (
-          <p className={`mt-2 max-w-2xl mx-auto md:mx-0 ${subtitleClass}`}>{subtitle}</p>
-        )}
+  {title && <h1 className={titleClass}>{title}</h1>}
+  {subtitle && <p className={subtitleClass}>{subtitle}</p>}
       </div>
     </section>
   );
