@@ -2,7 +2,7 @@
 import { useState } from "react";
 import PageContainer from "../../components/PageContainer";
 import ContentSection from "../../components/ContentSection";
-import SectionBanner from "../../components/SectionBanner";
+import AboutBanner from "../../components/AboutBanner";
 import KksButton from "../../components/KksButton";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -19,7 +19,7 @@ export default function Contact() {
 
   return (
     <PageContainer>
-      <SectionBanner variant="boat" className="mb-8" />
+      <AboutBanner imageSrc="/images/contact.png" />
       <ContentSection>
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           {/* Left Card: Address & Info */}

@@ -5,7 +5,7 @@ import MemberCarousel from "../../components/MemberCarousel";
 export default function AboutPage() {
   return (
     <>
-  <AboutBanner />
+      <AboutBanner imageSrc="/images/Home_About.png" alt="Kerala Kala Samithi Banner" />
       <main className="max-w-4xl mx-auto py-16 px-4">
         <p className="text-lg text-gray-700 mb-4">
           Kerala Kala Samithi is a socio-cultural and charitable organization based in Goregaon West, Mumbai. Since its inception, the Samithi has been a platform for music lovers, artists, and community members who believe in the power of culture and compassion.

@@ -13,11 +13,15 @@ const variantImages = {
   vilakku: {
     src: "/kks/vilakku.jpg",
     alt: "Kerala lamp festival"
+  },
+  contact: {
+    src: "/images/contact.png",
+    alt: "Contact Kerala Kala Samithi"
   }
 };
 
 interface SectionBannerProps {
-  variant?: "theyyam" | "boat" | "vilakku";
+  variant?: "theyyam" | "boat" | "vilakku" | "contact";
   title?: string;
   height?: string; // e.g. "h-[180px] md:h-[220px]"
   className?: string;
