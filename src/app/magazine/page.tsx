@@ -39,7 +39,6 @@ export default function Magazine() {
         subtitle="Read our quarterly magazine celebrating Kerala’s culture, events, and stories."
         imageSrc="/kks/magazine-hero.jpg"
         tint="dark"
-        height="md"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Magazine" }]}
       />
       <PageContainer>

@@ -9,7 +9,6 @@ export default function CulturePage() {
         subtitle="Experience Kerala’s vibrant traditions, arts, and festivals."
         imageSrc="/kks/culture-bg.jpg"
         tint="dark"
-        height="md"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Culture" }]}
       />
       <main className="max-w-4xl mx-auto py-16 px-4">

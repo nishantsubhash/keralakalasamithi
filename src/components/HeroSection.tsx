@@ -107,7 +107,7 @@ export default function HeroSection() {
       </div>
       {/* Theyyam image at left side as decorative element, with fade blend */}
       <div
-        className="absolute top-0 bottom-0 -left-64 z-10 hidden sm:block"
+  className="absolute top-0 bottom-0 -left-64 z-10 hidden sm:block"
         style={{
           width: "520px",
           height: "100%",
@@ -129,7 +129,7 @@ export default function HeroSection() {
       </div>
       {/* Kathakali image at right side as decorative element, with fade blend */}
       <div
-        className="absolute top-0 bottom-0 right-0 z-10 hidden sm:block"
+  className="absolute top-0 bottom-0 right-0 z-10 hidden sm:block"
         style={{
           width: "400px",
           height: "100%",

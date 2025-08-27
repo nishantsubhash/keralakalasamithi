@@ -9,7 +9,6 @@ export default function ActivitiesPage() {
 				subtitle="Discover our cultural, social, and charitable events."
 				imageSrc="/kks/activities-bg.jpg"
 				tint="dark"
-				height="md"
 				breadcrumb={[{ label: "Home", href: "/" }, { label: "Activities" }]}
 			/>
 			<main className="max-w-4xl mx-auto py-16 px-4">
