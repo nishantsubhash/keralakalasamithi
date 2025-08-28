@@ -100,7 +100,7 @@ export default function HeroSection() {
               className="px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-[#d97706] to-[#d4af37] border-2 border-[#d97706] shadow animate-flash focus:outline-none focus:ring-2 focus:ring-[#d4af37]"
               style={{ animation: "flash 1.2s infinite alternate" }}
             >
-              Download September Edition
+              Kerala Vibes Issue II
             </Link>
           </div>
         </div>
